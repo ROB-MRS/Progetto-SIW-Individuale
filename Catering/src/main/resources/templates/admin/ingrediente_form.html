@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/css/admin.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<title>Crea Ingrediente</title>
+</head>
+<body class="sfondo">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  		<div class="container-fluid">
+    		<strong class="navbar-brand">Form Del Nuovo Ingrediente</strong>
+    			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+    			</button>
+    	<div class="collapse navbar-collapse" id="navbarNav">
+      		<ul class="navbar-nav">
+        		<li class="nav-item">
+          			<a class="nav-link active" aria-current="page" href="#"></a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/admin/ingrediente_managment">Indietro</a>
+        		</li>
+      		</ul>
+    	</div>
+  	</div>
+	</nav>
+	<br></br>
+	<div class="container" align="center">
+	<div class="row">
+	<div class="col-lg-6 border border-primary container justify-content-center card">
+	<h1>INSERISCI I DATI DELL'INGREDIENTE</h1>	
+	<div class="card-body">
+	<form th:action="@{/admin/ingrediente_managment}" method="POST" th:object="${ingrediente}" class="needs-validation">
+		<div class="mb-3 form-group">
+			<label class="form-label"><strong>Nome:</strong></label>
+			<input type="text" name="nome" th:field="*{nome}" class="form-text form-control">
+			<label th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></label>
+		</div>
+		<div class="mb-3 form-group">
+			<label class="form-label"><strong>Origine:</strong></label>
+			<input type="text" name="origine" th:field="*{origine}" class="form-text form-control">
+			<label th:if="${#fields.hasErrors('origine')}" th:errors="*{origine}"></label>
+		</div>
+		<div class="mb-3 form-group">
+			<label class="form-label"><strong>Descrizione:</strong></label>
+			<textarea type="text" name="descrizione" th:field="*{descrizione}" class="form-text form-control" id="exampleFormControlInput1" rows="3">
+			<label th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></textarea>
+		</div>
+		<div align="center">
+			<button type="submit" class="btn btn-success">AGGIUNGI</button>
+		</div>
+	</form>
+	</div>
+	</div>
+	</div>
+	</div>
+</body>
+</html>

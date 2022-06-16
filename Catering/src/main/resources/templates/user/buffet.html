@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Buffet</title>
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body  th:object="${buffet}">
+	<header id="header-buffet-detail">
+		<nav id="menu_bar">
+			<strong id="intestazione-per-utente">ECCO IL BUFFET:</strong>
+			<a href="/user/all_buffets" class="simple_button">Indietro</a>
+			<a href="/" class="info_button">HOME</a>
+		</nav>
+		<br>
+		<div class="container-informazioni">
+			<div>
+				<h1 th:text="${buffet.nome}">Nome Buffet</h1>
+			</div>
+			<div align="center">
+				<label>buffet offeto dallo chef:</label>
+				<a th:text="${buffet.chef.nome} + ' ' + ${buffet.chef.cognome}" 
+				th:href="@{/user/all_buffets/chef/{chef_id}(chef_id=${buffet.chef.id})}" class="simple_button outlined">chefNome chefCognome</a>
+			</div>
+			<div class="descrizione" align="center">
+				<h4 th:text="${buffet.descrizione}">descrizione del buffet</h4>
+			</div>
+			<div>
+				<label>ecco i piatti:</label>
+				<div th:each="piatto: ${buffet.piatti}">
+					<li>
+						<strong><label th:text="${piatto.nome} + ':'">esempio di un piatto</label></strong>
+						<a th:href="@{/user/all_buffets/buffet/piatto/{piatto_id}(piatto_id=${piatto.id})}">vedi dettagli</a>
+					</li>
+				</div>
+				<br>
+			</div> 
+		</div>
+		<br>
+	</header>
+	<section class="contatti">
+		<div class="flex-text-item">
+			<strong class="intestazione_contatti">SEGUICI</strong>
+      		<div>▬▬▬▬▬▬ ○ ▬▬▬▬▬▬</div>
+      		<p>Seguici sui social per rimanere sempre aggiornato.</p>
+      		<a class="info_button" href="https://www.facebook.com/">facebook</a>
+      		<a class="info_button" href="https://www.instagram.com/">instagram</a>
+      		<a class="info_button" href="https://www.youtube.com/">youtube</a>
+      	</div>
+		<div class="flex-text-item-special">
+			<strong class="intestazione_contatti_special">CONTATTI</strong>
+      		<div>▬▬▬▬▬▬ ○ ▬▬▬▬▬▬</div>
+      		<p>Contattaci per avere un preventivo:</p>
+      		<p>Tel: 02 3656 3630</p>
+      		<p>Email: info@catering.it</p>
+		</div>
+		<div class="flex-text-item">
+			<strong class="intestazione_contatti">DOVE SIAMO</strong>
+      		<div>▬▬▬▬▬▬ ○ ▬▬▬▬▬▬</div>
+      		<p>Puoi venirci a trovare al nostro indirizzo:</p>
+      		<a href="https://www.google.it/maps/place/10+Downing+St,+London+SW1A+2AB,+Regno+Unito/@51.5033998,-0.1299152,17z/data=!3m1!4b1!4m5!3m4!1s0x487604c56f3b61c7:0x9c97d4222fab0eb7!8m2!3d51.5033998!4d-0.1277265">10 Downing Street, Londra, Regno Unito</a>
+		</div>
+	</section>
+	<footer class="footer">Questo sito è stato sviluppato per l'esame di Sistemi Informativi su Web per l'a.a 2021/2022, con scopo puramente didattico e non commerciale
+	. Sebbene per la creazione di questo sito sia stato preso spunto da pagine esistenti, la somiglianza con altri siti web è da considerarsi puramente casuale.</footer>
+</body>
+</body>
+</html>

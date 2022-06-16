@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css/admin.css">
+	<title>Scelta Buffet</title>
+</head>
+<body class="sfondo">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  		<div class="container-fluid">
+    		<strong class="navbar-brand">Scegli il Buffet Del Quale Vuoi Visualizzare i Piatti</strong>
+    			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+    			</button>
+    	<div class="collapse navbar-collapse" id="navbarNav">
+      		<ul class="navbar-nav">
+        		<li class="nav-item">
+          			<a class="nav-link active" aria-current="page" href="#"></a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/admin">Indietro</a>
+        		</li>
+      		</ul>
+    	</div>
+  	</div>
+	</nav>
+	<br></br>
+	<div class="container" align="center">
+	<div class="row">
+	<div class="col-lg-6 border border-primary container justify-content-center card">	
+	<div class="card-body">
+	<div th:each="buffet : ${buffets}">
+		<li>
+			<strong><label th:text="${buffet.nome}">prova</label></strong>
+			<a th:href="@{/admin/piatto_managment/{buffet_id}(buffet_id=${buffet.id})}" class="btn btn-warning">SELEZIONA</a>
+			<br></br>
+		</li>		
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+</body>
+</html>

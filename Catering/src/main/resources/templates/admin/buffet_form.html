@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css/admin.css">
+	<title>Crea Buffet</title>
+</head>
+<body class="sfondo">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  		<div class="container-fluid">
+    		<strong class="navbar-brand">Form Del Nuovo Buffet</strong>
+    			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+    			</button>
+    	<div class="collapse navbar-collapse" id="navbarNav">
+      		<ul class="navbar-nav">
+        		<li class="nav-item">
+          			<a class="nav-link active" aria-current="page" href="#"></a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/admin/chef_managment">Indietro</a>
+        		</li>
+      		</ul>
+    	</div>
+  	</div>
+	</nav>
+	<br></br>
+	<div class="container">
+	<div class="row">
+	<div class="col-lg-6 border border-primary container justify-content-center card">
+	<h1>INSERISCI I DATI DEL BUFFET</h1>	
+	<div class="card-body">
+	<form th:action="@{/admin/buffet_managment/add/{chef_id}(chef_id=${chef_id})}" method="POST" th:object="${buffet}" class="needs-validation">
+		<div class="mb-3 form-group">
+			<label class="form-label"><strong>Nome:</strong></label>
+			<input type="text" name="nome" th:field="*{nome}" class="form-text form-control">
+			<label th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></label>
+		</div>
+		<div class="mb-3 form-group">
+			<label class="form-label"><strong>Descrizione:</strong></label>
+			<textarea type="text" name="descrizione" th:field="*{descrizione}" class="form-text form-control" id="exampleFormControlInput1" rows="3"></textarea>
+			<label th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></label>
+		</div>
+		<div align="center">
+			<button type="submit" class="btn btn-success"><strong>AGGIUNGI</strong></button>
+		</div>
+	</form>
+	</div>
+	</div>
+	</div>
+	</div>
+</body>
+</html>

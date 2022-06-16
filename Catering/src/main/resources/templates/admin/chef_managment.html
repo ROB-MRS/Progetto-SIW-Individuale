@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/css/admin.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" type="text/css" href="general.css">
+	<link href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+	<title>Gestione Chef</title>
+</head>
+<body class="sfondo">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  		<div class="container-fluid">
+    		<strong class="navbar-brand">Gestione Chef</strong>
+    			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+    			</button>
+    	<div class="collapse navbar-collapse" id="navbarNav">
+      		<ul class="navbar-nav">
+        		<li class="nav-item">
+          			<a class="nav-link active" aria-current="page" href="#"></a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/admin">Indietro</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link btn btn-outline-success" href="/admin/chef_managment/add">Aggiungi Chef</a>
+        		</li>
+      		</ul>
+    	</div>
+  	</div>
+	</nav>
+	<div class="">
+	<table class="table table-primary table-striped">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>NOME</th>
+				<th>COGNOME</th>
+				<th>NAZIONALITA</th>
+				<th>OPERAZIONE</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr  th:each="chef : ${chefs}">
+				<td th:text="${chef.id}">00123</td>
+				<td th:text="${chef.nome}">Roberto</td>
+				<td th:text="${chef.cognome}">Marsella</td>
+				<td th:text="${chef.nazionalita}">Italia</td>
+				<td>
+					<a th:href="@{/admin/chef_managment/edit/{chef_id}(chef_id=${chef.id})}" class="btn btn-outline-primary"><strong>MODIFICA</strong></a>
+					<a th:href="@{/admin/chef_managment/delete/{chef_id}(chef_id=${chef.id})}" class="btn btn-outline-danger"><strong>ELIMINA</strong></a>
+					<a th:href="@{/admin/buffet_managment/add/{chef_id}(chef_id=${chef.id})}" class="btn btn-outline-success"><strong>CREA BUFFET</strong></a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="alert alert-danger" role="alert">Attenzione! Eliminando uno chef verranno rimossi i buffet che offre e i piatti all'interno di questi.</div>
+	</div>
+</body>
+</html>

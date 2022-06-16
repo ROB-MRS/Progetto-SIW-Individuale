@@ -1,0 +1,248 @@
+body {
+  font-family: 'Noto Serif', serif;
+  margin: 0;
+}
+
+h1{
+  font-style: italic;
+}
+
+/* FOGLIO DI STILE CSS PER HOMEPAGE.HTML */
+
+.sfondo{
+  background-color: #C5D7F1;
+}
+
+#header{
+  background-image: url(http://www.rivieracatering.it/files/2016/07/RM_20160521_1751_X1B5039-1500x630.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 750px;
+  padding: 10px;
+  display: flex;
+}
+
+#header-buffet{
+    background-image: url(http://www.rivieracatering.it/files/2016/07/RM_20160521_1751_X1B5039-1500x630.jpg);
+  background-repeat: repeat-y;
+  background-size: cover;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#header-buffet-detail{
+  background-image: url(https://maurizioricci.altervista.org/wp-content/uploads/2019/11/banqueting-catering-2.jpg);
+  background-repeat: repeat-y;
+  background-size: cover;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#header-piatto{
+  background-image: url(https://wallpaperaccess.com/full/5600194.jpg);
+  background-repeat: repeat-y;
+  background-size: cover;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#header-chef{
+  background-image: url(https://static.gamberorosso.it/2020/11/cucina-ristorante.jpg);
+  background-repeat: repeat-y;
+  background-size: cover;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#intestazione-per-utente{
+  color: #51433E;
+  font-size: 20px;
+  margin-right: 28%;
+}
+
+.container-informazioni{
+  display: flex;
+  color: #51433E;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F4F1DE;
+  border-radius: 3px;
+  width: 45%;
+  justify-content: space-around;
+}
+
+#logo{
+  color: #51433E;
+  font-style: italic;
+  width: 120px;
+  height: 50px;
+  margin-right: 42%;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: -0.5%;
+}
+
+#menu_bar {
+  padding-right: 10px;
+  border-radius: 3px;
+  background-color: #F4F1DE;
+  height: 53px;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.flex-container{
+  display:flex;
+  justify-content: center;
+  height: 480px;
+  background-color: #51433E;
+}
+.descrizione{
+  width: 70%;
+}
+
+.flex-image-item{
+  display: flex;
+  align-items: center;
+  background-color:#51433E;
+  width: 50%;
+  color: #F4F1DE;
+  text-align: center;
+  flex-grow: 1;
+}
+
+/*.flex-image-item{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color:#51433E;
+  color:#F4F1DE;
+  width: 50%;
+  text-align: center;
+  flex-grow: 1;
+}*/
+
+.flex-text-item{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color:#F4F1DE;
+  color:#51433E;
+  width: 50%;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.flex-text-item-special{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color:#51433E;
+  color:#F4F1DE;
+  width: 50%;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.intestazione{
+  padding: 25px;
+  color: #51433E;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 30px;
+}
+
+.paragrafo{
+  align-items: center;
+  color: #51433E;
+  font-style: italic;
+  font-size: 20px;
+  width: 400px;
+}
+
+.info_button{
+  border: 2px solid #51433E;
+  border-radius: 3px;
+  align-items: center;
+  color: #51433E;
+  font-size: 20px;
+  width: 110px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.simple_button{
+  color: #51433E;
+  font-size: 20px;
+  width: 100px;
+  text-decoration: none;
+  margin: 15px;
+}
+
+.contatti{
+  display: flex;
+  height: 340px;
+}
+
+#immagine_storia{
+  background-image: url(http://www.rivieracatering.it/files/2015/10/13-matrimonio-mare_0830.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: 150px;
+  width: 75%;
+  border-radius: 3px;
+  height: 88%;
+}
+
+#immagine_buffet{
+  background-image: url(http://www.rivieracatering.it/files/2015/10/DSC_1854-1030x686-1030x686-1030x686.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: 30px;
+  width: 75%;
+  border-radius: 3px;
+  height: 88%;
+}
+
+#immagine_eventi{
+  background-image: url(http://www.rivieracatering.it/files/2016/07/RM_20160521_1959_X1B5273-1030x687.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: 150px;
+  width: 75%;
+  border-radius: 3px;
+  height: 88%;
+}
+
+.intestazione_contatti{
+  padding: 25px;
+  color: #51433E;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.intestazione_contatti_special{
+  padding: 25px;
+  color: #51433E;
+  font-weight: bold;
+  font-size: 20px;
+  color: #F4F1DE;
+}
+
+.footer{
+  background-color: grey;
+  color: #F4F1DE;
+  font-size: 10px;
+}
+
+/* ================================================ */

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/css/admin.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<title>Gestione Piatti</title>
+</head>
+<body class="sfondo">
+	<nav th:object="${buffet}" class="navbar navbar-expand-lg navbar-dark bg-dark">
+  		<div class="container-fluid">
+    		<strong class="navbar-brand">Gestione Piatti Del Buffet Selezionato:</strong>
+    			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+    			</button>
+    	<div class="collapse navbar-collapse" id="navbarNav">
+      		<ul class="navbar-nav">
+        		<li class="nav-item">
+          			<a class="nav-link active" aria-current="page" href="#"></a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/admin/buffet_choose">Indietro</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/admin/chef_managment">Ai Buffet</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link btn btn-outline-success" th:href="@{/admin/piatto_managment/add/{buffet_id}(buffet_id=${buffet_id})}">Crea Piatto</a>
+        		</li>
+      		</ul>
+    	</div>
+  	</div>
+	</nav>
+	<table class="table table-primary table-striped">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>NOME</th>
+				<th>DESCRIZIONE</th>
+				<th>INGREDIENTI</th>
+				<th>OPERAZIONE</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr  th:each="piatto : ${piatti}">
+				<td th:text="${piatto.id}">00123</td>
+				<td th:text="${piatto.nome}">pasta ar sugo</td>
+				<td>
+					<div th:text="${piatto.descrizione}">good</div>
+				</td>
+				<td>
+					<div th:each="ingrediente : ${piatto.ingredienti}">
+						<li th:text="${ingrediente.nome}"></li>
+					</div>
+				</td>
+				<td>
+					<a th:href="@{/admin/piatto_managment/delete/{piatto_id}(piatto_id=${piatto.id})}" class="btn btn-outline-danger"><strong>ELIMINA</strong></a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

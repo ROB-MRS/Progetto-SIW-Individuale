@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<title>Log In</title>
+</head>
+<!-- <body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  		<div class="container-fluid">
+    		<strong class="navbar-brand">Log In</strong>
+    			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+    			</button>
+    	<div class="collapse navbar-collapse" id="navbarNav">
+      		<ul class="navbar-nav">
+        		<li class="nav-item">
+          			<a class="nav-link active" aria-current="page" href="#"></a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link btn btn-outline-warning" href="/">HOME</a>
+        		</li>
+      		</ul>
+    	</div>
+  	</div>
+	</nav>
+	<br>
+	<div class="container">
+	<div class="row">
+	<div class="col-lg-6 border border-primary container justify-content-center card">
+	<div align="center"><h1>INSERISCI I DATI</h1></div>	
+	<div class="card-body">
+	<form th:action="@{/login}" method="POST" class="needs-validation">
+		<div class="mb-3 form-group">
+			<label class="form-label"><strong>User:</strong></label>
+			<input type="text" name="user" class="form-text form-control" required>
+		</div>
+		<div class="mb-3 form-group">
+			<label class="form-label"><strong>Password:</strong></label>
+			<input type="password" name="password" class="form-text form-control" id="exampleFormControlInput1" required>
+		</div>
+		<div align="center">
+			<button type="submit" class="btn btn-success"><strong>LOG IN</strong></button>
+		</div>
+	</form>
+	</div>
+	</div>
+	</div>
+	</div>
+</body> -->
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  		<div class="container-fluid">
+    		<strong class="navbar-brand">Log In</strong>
+    			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+    			</button>
+    	<div class="collapse navbar-collapse" id="navbarNav">
+      		<ul class="navbar-nav">
+        		<li class="nav-item">
+          			<a class="nav-link active" aria-current="page" href="#"></a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link btn btn-outline-warning" href="/">HOME</a>
+        		</li>
+      		</ul>
+    	</div>
+  	</div>
+	</nav>
+	<br>
+	<div class="container">
+	<div class="row">
+	<div class="col-lg-6 border border-primary container justify-content-center card">
+	<div align="center"><h1>INSERISCI I DATI</h1></div>	
+	<div class="card-body">
+	<form th:action="@{/login}" method="POST">
+		<div>
+			<div class="mb-3 form-group">
+				<span class="form-label">Username:</span>
+				<span><input name="username" type="text" required class="form-text form-control" /></span>
+			</div>
+			<br>	
+			<div class="mb-3 form-group">
+				<span class="form-label">Password:</span>
+				<span><input name="password" type="password" required class="form-text form-control"/></span>
+			</div>
+			<br>
+			<div align="center">
+				<span><button type="submit" class="btn btn-success">Login</button></span>
+			</div>
+		</div>
+	</form>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

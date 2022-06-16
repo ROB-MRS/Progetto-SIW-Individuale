@@ -1,0 +1,135 @@
+/* FOGLIO DI STILE CSS PER EVENTS.HTML */
+
+body {
+  font-family: 'Noto Serif', serif;
+  margin: 0;
+}
+
+#header{
+  background-image: url(https://i2.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/2020/07/11/Impresa%20e%20Territori/ImmaginiWeb/Ritagli/AdobeStock_237661137-ksbF--1020x533@IlSole24Ore-Web.jpeg?r=540x283);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 330px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#titolo{
+  padding-top: 70px;
+  color: #F4F1DE;
+  font-size: 40px;
+}
+
+#menu_bar {
+  padding-right: 10px;
+  border-radius: 3px;
+  background-color: #F4F1DE;
+  height: 52px;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.flex-container{
+  display:flex;
+  justify-content: center;
+  height: 500px;
+  background-color: #51433E;
+}
+
+.flex-image-item{
+  display: flex;
+  align-items: center;
+  background-color:#51433E;
+  width: 50%;
+  color: #F4F1DE;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.flex-text-item{
+  display: flex;
+  align-items: center;
+  justufy_content: center;
+  flex-direction: column;
+  background-color:#F4F1DE;
+  color:#51433E;
+  width: 50%;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.flex-text-item-special{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color:#51433E;
+  color:#F4F1DE;
+  width: 50%;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.text{
+  font-size: 20px;
+  margin-top: 7%;
+  width:75%;
+}
+
+.info_button{
+  border: 2px solid #51433E;
+  border-radius: 3px;
+  align-items: center;
+  color: #51433E;
+  font-size: 20px;
+  width: 70px;
+  text-decoration: none;
+}
+
+.simple_button{
+  color: #51433E;
+  font-size: 20px;
+  width: 100px;
+  text-decoration: none;
+  margin: 15px;
+}
+
+.contatti{
+  display: flex;
+  height: 340px;
+}
+
+.intestazione_contatti{
+  padding: 25px;
+  color: #51433E;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.intestazione_contatti_special{
+  padding: 25px;
+  color: #51433E;
+  font-weight: bold;
+  font-size: 20px;
+  color: #F4F1DE;
+}
+
+#logo{
+  color: #51433E;
+  font-style: italic;
+  width: 120px;
+  height: 50px;
+  margin-right: 77%;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: -0.5%;
+}
+
+.footer{
+  background-color: grey;
+  color: #F4F1DE;
+  font-size: 10px;
+}

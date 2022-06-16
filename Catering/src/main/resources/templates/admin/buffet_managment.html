@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css/admin.css">
+	<title>Gestione Buffet</title>
+</head>
+<body class="sfondo">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  		<div class="container-fluid">
+    		<strong class="navbar-brand">Gestione Buffet</strong>
+    			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+    			</button>
+    	<div class="collapse navbar-collapse" id="navbarNav">
+      		<ul class="navbar-nav">
+        		<li class="nav-item">
+          			<a class="nav-link active" aria-current="page" href="#"></a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/admin">Indietro</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/admin/chef_managment">Agli Chef</a>
+        		</li>
+      		</ul>
+    	</div>
+  	</div>
+	</nav>
+	<table class="table table-primary table-striped">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>NOME</th>
+				<th>CHEF</th>
+				<th>DESCRIZIONE</th>
+				<th>PIATTI</th>
+				<th>OPERAZIONI</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr  th:each="buffet : ${buffets}">
+				<td th:text="${buffet.id}">00123</td>
+				<td th:text="${buffet.nome}">Matrimonio</td>
+				<td th:text="${buffet.chef.nome} + ' ' + ${buffet.chef.cognome}">Roberto Marsella</td>
+				<td>
+					<div th:text="${buffet.descrizione}"></div>
+				</td>
+				<td>
+					<div th:each="piatto: ${buffet.piatti}">
+						<li th:text="${piatto.nome}">carbonare</li>
+					</div>
+				</td>
+				<td>
+<!-- 					<a th:href="@{/admin_index/buffet_managment/edit/{buffet_id}(buffet_id=${buffet_id})}">modifica</a> -->
+					<a th:href="@{/admin/buffet_managment/delete/{buffet_id}(buffet_id=${buffet.id})}" class="btn btn-outline-danger"><strong>ELIMINA</strong></a>
+					<a th:href="@{/admin/piatto_managment/{buffet_id}(buffet_id=${buffet.id})}" class="btn btn-outline-primary"><strong>MODIFICA PIATTI</strong></a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="alert alert-danger" role="alert">Attenzione! Eliminando un buffet, eliminerai anche i piatti in esso contenuti.</div>
+</body>
+</html>
